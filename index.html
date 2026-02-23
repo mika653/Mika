@@ -454,9 +454,9 @@
     .service-card:nth-child(2)::before { background: var(--yellow); }
     .service-card:nth-child(3)::before { background: var(--coral); }
     .service-card:nth-child(4)::before { background: var(--pink); }
-    .service-card:nth-child(5)::before { background: var(--navy); }
-    .service-card:nth-child(6)::before { background: var(--gold); }
-    .service-card:nth-child(7)::before { background: linear-gradient(135deg, var(--teal), var(--coral)); }
+    .service-card:nth-child(5)::before { background: var(--gold); }
+    .service-card:nth-child(6)::before { background: linear-gradient(135deg, var(--teal), var(--coral)); }
+    .service-card:nth-child(7)::before { background: #1DB954; }
 
     .service-icon {
       width: 52px; height: 52px; border-radius: var(--radius-md);
@@ -472,12 +472,12 @@
     .service-card:nth-child(3) .service-icon svg { stroke: var(--coral); }
     .service-card:nth-child(4) .service-icon { background: rgba(255, 184, 208, 0.2); }
     .service-card:nth-child(4) .service-icon svg { stroke: #E88FAA; }
-    .service-card:nth-child(5) .service-icon { background: rgba(15, 15, 35, 0.06); }
-    .service-card:nth-child(5) .service-icon svg { stroke: var(--navy); }
-    .service-card:nth-child(6) .service-icon { background: rgba(245, 197, 66, 0.12); }
-    .service-card:nth-child(6) .service-icon svg { stroke: var(--gold); }
-    .service-card:nth-child(7) .service-icon { background: linear-gradient(135deg, rgba(0,212,170,0.1), rgba(255,90,95,0.1)); }
-    .service-card:nth-child(7) .service-icon svg { stroke: var(--teal); }
+    .service-card:nth-child(5) .service-icon { background: rgba(245, 197, 66, 0.12); }
+    .service-card:nth-child(5) .service-icon svg { stroke: var(--gold); }
+    .service-card:nth-child(6) .service-icon { background: linear-gradient(135deg, rgba(0,212,170,0.1), rgba(255,90,95,0.1)); }
+    .service-card:nth-child(6) .service-icon svg { stroke: var(--teal); }
+    .service-card:nth-child(7) .service-icon { background: rgba(29, 185, 84, 0.1); }
+    .service-card:nth-child(7) .service-icon svg { stroke: #1DB954; }
 
     .service-card h3 {
       font-family: var(--font-display); font-weight: 700;
@@ -609,6 +609,7 @@
     .portfolio-card:nth-child(2) .portfolio-thumb-bg { background: linear-gradient(135deg, #00D4AA 0%, #7AFFD4 100%); }
     .portfolio-card:nth-child(3) .portfolio-thumb-bg { background: linear-gradient(135deg, #FFCA28 0%, #FFE082 100%); }
     .portfolio-card:nth-child(4) .portfolio-thumb-bg { background: linear-gradient(135deg, #C77DFF 0%, #E0AAFF 100%); }
+    .portfolio-card:nth-child(5) .portfolio-thumb-bg { background: linear-gradient(135deg, #1DB954 0%, #1ED760 100%); }
 
     .portfolio-thumb-overlay {
       position: absolute; inset: 0; z-index: 2;
@@ -639,6 +640,7 @@
     .portfolio-card:nth-child(2) .portfolio-tag { background: rgba(0,212,170,0.08); color: var(--teal-deep); }
     .portfolio-card:nth-child(3) .portfolio-tag { background: rgba(255,202,40,0.12); color: #B8860B; }
     .portfolio-card:nth-child(4) .portfolio-tag { background: rgba(199,125,255,0.1); color: #9B59B6; }
+    .portfolio-card:nth-child(5) .portfolio-tag { background: rgba(29,185,84,0.1); color: #1DB954; }
 
     .portfolio-info h3 {
       font-family: var(--font-display); font-weight: 700;
@@ -1184,7 +1186,7 @@
         <span class="marquee-item"><span class="marquee-star">★</span> Project Management</span>
         <span class="marquee-item"><span class="marquee-star">★</span> Brand Strategy</span>
         <span class="marquee-item"><span class="marquee-star">★</span> Content Systems</span>
-        <span class="marquee-item"><span class="marquee-star">★</span> Video Editing</span>
+        <span class="marquee-item"><span class="marquee-star">★</span> Podcast Production</span>
         <span class="marquee-item"><span class="marquee-star">★</span> AI Web Design</span>
         <!-- Duplicate for seamless loop -->
         <span class="marquee-item"><span class="marquee-star">★</span> Social Media Strategy</span>
@@ -1194,7 +1196,7 @@
         <span class="marquee-item"><span class="marquee-star">★</span> Project Management</span>
         <span class="marquee-item"><span class="marquee-star">★</span> Brand Strategy</span>
         <span class="marquee-item"><span class="marquee-star">★</span> Content Systems</span>
-        <span class="marquee-item"><span class="marquee-star">★</span> Video Editing</span>
+        <span class="marquee-item"><span class="marquee-star">★</span> Podcast Production</span>
         <span class="marquee-item"><span class="marquee-star">★</span> AI Web Design</span>
       </div>
     </div>
@@ -1249,18 +1251,8 @@
             <span class="service-comic-tag">High-Converting</span>
           </div>
 
-          <!-- 5 -->
+          <!-- 5: PROJECT MANAGEMENT -->
           <div class="service-card reveal stagger-5">
-            <div class="service-icon">
-              <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-            </div>
-            <h3>Video Editing</h3>
-            <p>Short-form videos that stop the scroll. Reels, TikToks, course promos — edited with style, pacing, and strategy baked in.</p>
-            <span class="service-comic-tag">Scroll-Stopping</span>
-          </div>
-
-          <!-- 6: PROJECT MANAGEMENT -->
-          <div class="service-card reveal stagger-6">
             <div class="service-icon">
               <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg>
             </div>
@@ -1269,14 +1261,24 @@
             <span class="service-comic-tag">On-Time. Always.</span>
           </div>
 
-          <!-- 7: AI-POWERED WEB DESIGN -->
-          <div class="service-card reveal stagger-5">
+          <!-- 6: AI-POWERED WEB DESIGN -->
+          <div class="service-card reveal stagger-6">
             <div class="service-icon">
               <svg viewBox="0 0 24 24"><path d="M2 3h20v14H2z"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><path d="M7 8l-3 4 3 4"/><path d="M17 8l3 4-3 4"/><line x1="10" y1="7" x2="14" y2="15"/></svg>
             </div>
             <h3>AI-Powered Web Design</h3>
             <p>Custom websites and landing pages built with AI-enhanced workflows. No templates. No dev agency prices. Just clean, conversion-focused sites that match your brand.</p>
             <span class="service-comic-tag">No-Code. All Impact.</span>
+          </div>
+
+          <!-- 7: PODCAST PRODUCTION -->
+          <div class="service-card reveal stagger-5">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            </div>
+            <h3>Podcast Production</h3>
+            <p>From concept to Spotify. I handle production, editing, show notes, and promotion — so you can focus on the conversation while I make it sound incredible.</p>
+            <span class="service-comic-tag">Mic to Market</span>
           </div>
         </div>
       </div>
@@ -1424,6 +1426,24 @@
               </div>
             </div>
           </div>
+
+          <div class="portfolio-card reveal stagger-5" data-case="4">
+            <div class="portfolio-thumb">
+              <div class="portfolio-thumb-bg"></div>
+              <div class="portfolio-thumb-overlay">
+                <span class="portfolio-thumb-label">View Case Study</span>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <span class="portfolio-tag">Podcast Production</span>
+              <h3>Titos, Tita &amp; the Algorithm</h3>
+              <p>Full podcast production for DFB Digital Academy — from concept and scripting to editing, show notes, and Spotify distribution.</p>
+              <div class="portfolio-cta-row">
+                <a href="https://open.spotify.com/show/6dqGVxeRMNRv7O2OvoQs1z" target="_blank" rel="noopener noreferrer" class="portfolio-view" onclick="event.stopPropagation();">Listen on Spotify ↗</a>
+                <span class="portfolio-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1435,9 +1455,10 @@
           <div class="about-photo-wrap reveal-left">
             <div class="about-photo">
               <div class="about-photo-dots" aria-hidden="true"></div>
-              <div class="about-photo-placeholder">
+              <img src="public/mika.jpg" alt="Mika De Castro" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:1;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="about-photo-placeholder" style="display:none;">
                 <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                <span>Your photo here</span>
+                <span>Add mika.jpg to /public</span>
               </div>
             </div>
             <div class="about-badge" aria-hidden="true">
@@ -1576,7 +1597,7 @@
                   <option value="content-creation">AI-Assisted Content Creation</option>
                   <option value="graphic-design">Graphic Design</option>
                   <option value="copywriting">Copywriting</option>
-                  <option value="video-editing">Video Editing</option>
+                  <option value="podcast">Podcast Production</option>
                   <option value="project-management">Project Management</option>
                   <option value="web-design">AI-Powered Web Design</option>
                   <option value="full-package">Full Creative Package</option>
@@ -1716,6 +1737,18 @@
             { value: '12', label: 'Brand Partnerships' },
             { value: '90+', label: 'Content Assets' },
             { value: '3', label: 'Awards Nominated' }
+          ]
+        },
+        {
+          title: 'Titos, Tita & the Algorithm',
+          problem: 'DFB Digital Academy wanted to launch a Filipino podcast that made digital trends accessible to Gen X and millennial audiences — but had no podcast production experience or workflow.',
+          strategy: 'Built the entire podcast pipeline from scratch: concept development, episode structure, recording workflow, editing standards, show notes, and Spotify distribution strategy. Positioned the show as a weekly "digital tambayan" blending tech tsismis with nostalgic throwbacks.',
+          creative: 'Developed the show\'s identity, episode format mixing commentary with humor, intro/outro production, audio editing with pacing for casual listening, social media audiograms for promotion, and SEO-optimized show notes for each episode.',
+          results: [
+            { value: '7+', label: 'Episodes Live' },
+            { value: '100%', label: 'On-Time Delivery' },
+            { value: 'Spotify', label: 'Platform Live' },
+            { value: 'Weekly', label: 'Release Cadence' }
           ]
         }
       ];
