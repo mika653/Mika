@@ -394,6 +394,10 @@
       animation: pulse-ring 5s ease-in-out infinite;
     }
 
+    .hero-image-wrap {
+      display: none;
+    }
+
     /* ========================================
        MARQUEE — SOCIAL PROOF
     ======================================== */
@@ -1090,6 +1094,17 @@
 
       .hero-comic-badge { display: flex; }
       .mobile-cta-bar { display: none; }
+
+      .hero .container { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+      .hero-image-wrap {
+        display: block; flex-shrink: 0; width: 280px; height: 320px;
+        border-radius: var(--radius-xl); overflow: hidden; position: relative;
+        border: 2.5px solid var(--navy); box-shadow: 6px 6px 0 var(--navy);
+        transform: rotate(2deg);
+      }
+      .hero-image-wrap img {
+        width: 100%; height: 100%; object-fit: cover; object-position: center top;
+      }
     }
 
     /* ========================================
@@ -1097,6 +1112,8 @@
     ======================================== */
     @media (min-width: 1024px) {
       .container { padding: 0 56px; }
+
+      .hero-image-wrap { width: 340px; height: 400px; }
       .section-padding { padding: 140px 0; }
 
       .nav-links { display: flex; }
@@ -1210,6 +1227,10 @@
               <strong>Trusted by 20+ brands</strong><br>in education &amp; EdTech
             </div>
           </div>
+        </div>
+
+        <div class="hero-image-wrap hero-animate hero-d5">
+          <img src="public/mika-hero.jpg" alt="Mika De Castro — Creative Strategist" loading="eager">
         </div>
       </div>
 
@@ -1499,11 +1520,7 @@
           <div class="about-photo-wrap reveal-left">
             <div class="about-photo">
               <div class="about-photo-dots" aria-hidden="true"></div>
-              <img src="public/mika.jpg" alt="Mika De Castro" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:1;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-              <div class="about-photo-placeholder" style="display:none;">
-                <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                <span>Add mika.jpg to /public</span>
-              </div>
+              <img src="public/mika-about.jpg" alt="Mika De Castro" style="width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute;inset:0;z-index:1;">
             </div>
             <div class="about-badge" aria-hidden="true">
               <span>AI<br>Native</span>
