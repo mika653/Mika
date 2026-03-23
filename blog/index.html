@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Insights on AI, creative strategy, and ethical technology use for brands, educators, and creators. By Mika De Castro.">
+  <meta name="author" content="Mika De Castro">
+  <title>Blog — Mika De Castro | AI-Powered Creative Strategist</title>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://heymika.me/blog/">
+  <meta property="og:title" content="Blog — Mika De Castro">
+  <meta property="og:description" content="Insights on AI, creative strategy, and ethical technology use for brands, educators, and creators.">
+  <meta property="og:image" content="https://heymika.me/images/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://heymika.me/blog/">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SGDG43L70D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SGDG43L70D');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --teal: #00D4AA; --teal-deep: #00A88A;
+      --pink: #FF3D78; --pink-soft: #FF6B9D;
+      --navy: #0F0F23; --navy-mid: #1A1A35;
+      --cream: #F5F5F7; --cream-dark: #EDEDF0;
+      --white: #FFFFFF; --gray-300: #D1D1DB;
+      --gray-500: #8888A0; --gray-700: #4A4A60; --black: #0A0A1A;
+      --font-display: 'Unbounded', sans-serif;
+      --font-body: 'Outfit', sans-serif;
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-base: 350ms var(--ease-out-expo);
+      --transition-fast: 150ms ease;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); font-weight: 400; line-height: 1.6; color: var(--navy); background: var(--cream); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* NAV */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 18px 0; border-bottom: 3px solid var(--navy); background: var(--cream); }
+    .nav .container { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: var(--font-display); font-size: 1.35rem; font-weight: 800; letter-spacing: -0.02em; color: var(--navy); }
+    .nav-logo span { color: var(--pink); }
+    .nav-back { font-weight: 700; font-size: 0.88rem; color: var(--navy); letter-spacing: 0.06em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; transition: color var(--transition-fast); }
+    .nav-back:hover { color: var(--pink); }
+
+    /* LAYOUT */
+    .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+    @media (min-width: 768px) { .container { padding: 0 40px; } }
+    @media (min-width: 1024px) { .container { padding: 0 60px; } }
+
+    /* BLOG HEADER */
+    .blog-header { padding: 140px 0 60px; text-align: center; border-bottom: 4px solid var(--navy); }
+    .blog-header h1 { font-family: var(--font-display); font-size: clamp(1.8rem, 5vw, 3.2rem); font-weight: 900; text-transform: uppercase; line-height: 1.1; margin-bottom: 16px; }
+    .blog-header h1 .accent { color: var(--pink); }
+    .blog-header p { font-size: 1.05rem; color: var(--gray-500); max-width: 540px; margin: 0 auto; line-height: 1.7; }
+
+    /* BLOG GRID */
+    .blog-grid { display: grid; grid-template-columns: 1fr; gap: 28px; padding: 64px 0 100px; }
+    @media (min-width: 768px) { .blog-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; padding: 80px 0 120px; } }
+    @media (min-width: 1024px) { .blog-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    /* BLOG CARD */
+    .blog-card { background: var(--white); border: 3px solid var(--navy); box-shadow: 4px 4px 0 var(--navy); transition: all var(--transition-base); display: flex; flex-direction: column; }
+    .blog-card:hover { transform: translate(-3px, -3px); box-shadow: 7px 7px 0 var(--navy); border-color: var(--pink); }
+    .blog-card-tag { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 10px; color: rgba(255,255,255,0.85); background: var(--navy); margin-bottom: 12px; }
+    .blog-card-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
+    .blog-card h2 { font-family: var(--font-display); font-size: 1rem; font-weight: 700; line-height: 1.3; margin-bottom: 10px; letter-spacing: -0.01em; }
+    .blog-card p { font-size: 0.9rem; color: var(--gray-500); line-height: 1.6; flex: 1; }
+    .blog-card-meta { margin-top: 16px; padding-top: 16px; border-top: 2px solid var(--cream-dark); font-size: 0.78rem; color: var(--gray-500); display: flex; justify-content: space-between; }
+    .blog-card-read { font-family: var(--font-display); font-weight: 700; font-size: 0.78rem; color: var(--pink); }
+
+    /* FOOTER */
+    .footer { background: var(--black); color: rgba(255,255,255,0.5); padding: 40px 0 24px; border-top: 4px solid var(--pink); }
+    .footer-inner { display: flex; flex-direction: column; gap: 12px; font-size: 0.78rem; }
+    @media (min-width: 768px) { .footer-inner { flex-direction: row; justify-content: space-between; } }
+    .footer a { color: var(--teal); }
+    .footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container">
+      <a href="/" class="nav-logo">MIKA<span>.</span></a>
+      <a href="/" class="nav-back">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to Home
+      </a>
+    </div>
+  </nav>
+
+  <header class="blog-header">
+    <div class="container">
+      <h1>The <span class="accent">Blog</span></h1>
+      <p>Thoughts on AI, creative strategy, and using technology ethically. Written by a human, refined with AI.</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="blog-grid">
+
+        <a href="/blog/how-i-built-this-website-with-ai" class="blog-card">
+          <div class="blog-card-body">
+            <span class="blog-card-tag">AI + Web Design</span>
+            <h2>How I Built This Entire Website Using Only AI</h2>
+            <p>No templates. No page builders. No dev agency. Just Claude Code, a clear vision, and a lot of prompt engineering. Here's exactly how I did it.</p>
+            <div class="blog-card-meta">
+              <span>March 6, 2026</span>
+              <span class="blog-card-read">Read &rarr;</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/blog/ai-ethics-for-teachers-and-students" class="blog-card">
+          <div class="blog-card-body">
+            <span class="blog-card-tag">AI + Education</span>
+            <h2>5 Ways Teachers Can Use AI Ethically in the Classroom</h2>
+            <p>AI isn't going away. Instead of banning it, here's how educators can teach students to use it as a tool for thinking — not a replacement for it.</p>
+            <div class="blog-card-meta">
+              <span>February 24, 2026</span>
+              <span class="blog-card-read">Read &rarr;</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/blog/why-your-brand-needs-ai-and-a-human" class="blog-card">
+          <div class="blog-card-body">
+            <span class="blog-card-tag">AI + Strategy</span>
+            <h2>Why Your Brand's Content Strategy Needs AI (And a Human)</h2>
+            <p>AI can generate content faster than ever. But speed without strategy is just noise. Here's why the human layer still matters — and always will.</p>
+            <div class="blog-card-meta">
+              <span>February 17, 2026</span>
+              <span class="blog-card-read">Read &rarr;</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span>&copy; 2026 Mika De Castro. All rights reserved.</span>
+        <span><a href="/">heymika.me</a> — This entire website was designed and built using Claude Code.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

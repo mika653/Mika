@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI isn't going away. Here are 5 practical ways teachers can help students use AI ethically as a learning tool, not a shortcut.">
+  <meta name="author" content="Mika De Castro">
+  <title>5 Ways Teachers Can Use AI Ethically in the Classroom — Mika De Castro</title>
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://heymika.me/blog/ai-ethics-for-teachers-and-students">
+  <meta property="og:title" content="5 Ways Teachers Can Use AI Ethically in the Classroom">
+  <meta property="og:description" content="AI isn't going away. Here are 5 practical ways teachers can help students use AI ethically as a learning tool, not a shortcut.">
+  <meta property="og:image" content="https://heymika.me/images/og-image.png">
+  <meta property="article:published_time" content="2026-02-24">
+  <meta property="article:author" content="Mika De Castro">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://heymika.me/blog/ai-ethics-for-teachers-and-students">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SGDG43L70D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SGDG43L70D');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --teal: #00D4AA; --teal-deep: #00A88A;
+      --pink: #FF3D78; --navy: #0F0F23;
+      --cream: #F5F5F7; --cream-dark: #EDEDF0;
+      --white: #FFFFFF; --gray-300: #D1D1DB;
+      --gray-500: #8888A0; --gray-700: #4A4A60; --black: #0A0A1A;
+      --font-display: 'Unbounded', sans-serif;
+      --font-body: 'Outfit', sans-serif;
+      --transition-fast: 150ms ease;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); font-weight: 400; line-height: 1.6; color: var(--navy); background: var(--cream); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    a { color: var(--pink); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 18px 0; border-bottom: 3px solid var(--navy); background: var(--cream); }
+    .nav .container { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: var(--font-display); font-size: 1.35rem; font-weight: 800; color: var(--navy); text-decoration: none; }
+    .nav-logo span { color: var(--pink); }
+    .nav-back { font-weight: 700; font-size: 0.88rem; color: var(--navy); letter-spacing: 0.06em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .nav-back:hover { color: var(--pink); text-decoration: none; }
+    .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+    @media (min-width: 768px) { .container { padding: 0 40px; } }
+    @media (min-width: 1024px) { .container { padding: 0 60px; } }
+    .post-header { padding: 140px 0 48px; border-bottom: 4px solid var(--navy); }
+    .post-tag { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 10px; color: rgba(255,255,255,0.85); background: var(--navy); margin-bottom: 20px; }
+    .post-header h1 { font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 2.6rem); font-weight: 900; text-transform: uppercase; line-height: 1.12; margin-bottom: 20px; }
+    .post-meta { font-size: 0.88rem; color: var(--gray-500); display: flex; gap: 16px; flex-wrap: wrap; }
+    .post-meta strong { color: var(--navy); }
+    .post-content { max-width: 720px; padding: 56px 0 100px; }
+    .post-content p { font-size: 1.05rem; line-height: 1.8; color: var(--gray-700); margin-bottom: 24px; }
+    .post-content h2 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; text-transform: uppercase; margin: 48px 0 16px; color: var(--navy); }
+    .post-content h3 { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; margin: 32px 0 12px; color: var(--navy); }
+    .post-content ul, .post-content ol { margin: 0 0 24px 24px; }
+    .post-content li { font-size: 1.05rem; line-height: 1.8; color: var(--gray-700); margin-bottom: 8px; }
+    .post-content blockquote { padding: 20px 24px; background: var(--white); margin: 32px 0; font-weight: 600; color: var(--navy); font-size: 1.05rem; border: 3px solid var(--navy); border-left: 6px solid var(--pink); box-shadow: 3px 3px 0 var(--navy); }
+    .post-content strong { color: var(--navy); }
+    .post-cta { background: var(--navy); padding: 48px 32px; text-align: center; margin-bottom: 64px; }
+    .post-cta p { color: rgba(255,255,255,0.7); font-size: 1rem; margin-bottom: 20px; }
+    .post-cta .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-body); font-weight: 800; font-size: 0.9rem; letter-spacing: 0.06em; padding: 14px 32px; text-transform: uppercase; background: var(--pink); color: var(--white); border: 3px solid var(--white); box-shadow: 4px 4px 0 rgba(255,255,255,0.3); text-decoration: none; transition: all 300ms ease; }
+    .post-cta .btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(255,255,255,0.3); text-decoration: none; }
+    .footer { background: var(--black); color: rgba(255,255,255,0.5); padding: 40px 0 24px; border-top: 4px solid var(--pink); }
+    .footer-inner { display: flex; flex-direction: column; gap: 12px; font-size: 0.78rem; }
+    @media (min-width: 768px) { .footer-inner { flex-direction: row; justify-content: space-between; } }
+    .footer a { color: var(--teal); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container">
+      <a href="/" class="nav-logo">MIKA<span>.</span></a>
+      <a href="/blog/" class="nav-back">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        All Posts
+      </a>
+    </div>
+  </nav>
+
+  <article>
+    <header class="post-header">
+      <div class="container">
+        <span class="post-tag">AI + Education</span>
+        <h1>5 Ways Teachers Can Use AI Ethically in the Classroom</h1>
+        <div class="post-meta">
+          <span>By <strong>Mika De Castro</strong></span>
+          <span>February 24, 2026</span>
+          <span>6 min read</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="post-content">
+        <p>The conversation around AI in education has been stuck in the wrong gear. Schools are debating whether to <em>ban</em> AI tools when they should be asking: <strong>how do we teach students to use them well?</strong></p>
+
+        <p>AI is not going away. It's already embedded in the tools students use daily — search engines, social media, even their phone's autocomplete. Pretending it doesn't exist isn't a strategy. Teaching students to use it with integrity is.</p>
+
+        <p>Here are five practical ways educators can bring AI into the classroom ethically.</p>
+
+        <h2>1. Teach AI as a Thinking Partner, Not an Answer Machine</h2>
+
+        <p>The biggest misconception students have about AI is that it gives you "the answer." It doesn't. It gives you <em>an</em> answer — one that may be incomplete, biased, or flat-out wrong.</p>
+
+        <p>Frame AI tools as brainstorming partners. Have students use ChatGPT or Claude to generate ideas, then critically evaluate those ideas. Ask them: What did the AI get right? What did it miss? What would you add from your own experience?</p>
+
+        <p>This turns a potential crutch into a critical thinking exercise.</p>
+
+        <h2>2. Make "Show Your Process" the Standard</h2>
+
+        <p>Instead of banning AI-assisted work, require students to <strong>document how they used AI</strong> in their assignments. What prompts did they write? What did the AI output? How did they edit, refine, or disagree with the output?</p>
+
+        <p>This teaches a skill that's increasingly valuable in the workplace: <strong>prompt engineering</strong> — the ability to direct AI tools effectively. It also makes the learning visible. You can see exactly where the student's thinking happened.</p>
+
+        <blockquote>The goal isn't to catch students using AI. It's to teach them to use it so well that they can explain every decision they made.</blockquote>
+
+        <h2>3. Use AI to Differentiate Instruction</h2>
+
+        <p>Every teacher knows the challenge: 30 students, 30 different learning levels. AI can help bridge that gap.</p>
+
+        <ul>
+          <li>Use AI to generate reading passages at different difficulty levels on the same topic</li>
+          <li>Create personalized practice problems based on individual student needs</li>
+          <li>Generate discussion questions that scaffold from basic comprehension to critical analysis</li>
+          <li>Translate materials for multilingual classrooms</li>
+        </ul>
+
+        <p>This isn't replacing the teacher — it's giving the teacher superpowers. You still design the lesson, set the learning objectives, and assess the outcomes. AI handles the time-consuming customization.</p>
+
+        <h2>4. Teach Attribution and Transparency</h2>
+
+        <p>If a student uses AI in their work, they should say so. Not because it's shameful, but because <strong>transparency is an ethical standard</strong> that applies to all tools.</p>
+
+        <p>We already teach students to cite their sources. AI should be no different. Create a simple framework:</p>
+
+        <ul>
+          <li>What AI tool was used?</li>
+          <li>What was it used for? (brainstorming, drafting, editing, research)</li>
+          <li>What did the student contribute beyond the AI output?</li>
+        </ul>
+
+        <p>This normalizes AI use while maintaining academic honesty. It also prepares students for workplaces where AI-assisted work is the norm and transparency about it is expected.</p>
+
+        <h2>5. Discuss Bias, Limitations, and Responsibility</h2>
+
+        <p>AI models are trained on data created by humans — which means they inherit human biases. This is a powerful teaching moment.</p>
+
+        <p>Have students test AI tools for bias: ask the same question framed differently and compare outputs. Explore whose perspectives might be missing from AI-generated content. Discuss what happens when people trust AI output without questioning it.</p>
+
+        <p>These aren't just AI literacy skills. They're <strong>media literacy, critical thinking, and ethical reasoning</strong> — skills that matter regardless of what technology comes next.</p>
+
+        <h2>The Bigger Picture</h2>
+
+        <p>Banning AI in schools doesn't protect students. It just ensures they learn to use it without guidance — on their own, with no framework for doing it responsibly.</p>
+
+        <p>The teachers who lean into this moment, who help students develop a healthy, critical, and ethical relationship with AI, are the ones preparing their students for the real world.</p>
+
+        <p>And if you're an educator who wants help figuring out how to start — that's literally what I do. I train teachers and students on practical, ethical AI use that enhances learning instead of replacing it.</p>
+      </div>
+
+      <div class="post-cta">
+        <p>Interested in AI training for your school or organization?</p>
+        <a href="/#contact" class="btn">Get in Touch</a>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span>&copy; 2026 Mika De Castro. All rights reserved.</span>
+        <span><a href="/">heymika.me</a> — This entire website was designed and built using Claude Code.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

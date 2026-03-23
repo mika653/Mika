@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How I built my entire portfolio website using Claude Code — no templates, no page builders, just AI pair-programming and prompt engineering.">
+  <meta name="author" content="Mika De Castro">
+  <title>How I Built This Entire Website Using Only AI — Mika De Castro</title>
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://heymika.me/blog/how-i-built-this-website-with-ai">
+  <meta property="og:title" content="How I Built This Entire Website Using Only AI">
+  <meta property="og:description" content="No templates. No page builders. No dev agency. Just Claude Code, a clear vision, and a lot of prompt engineering.">
+  <meta property="og:image" content="https://heymika.me/images/og-image.png">
+  <meta property="article:published_time" content="2026-03-06">
+  <meta property="article:author" content="Mika De Castro">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://heymika.me/blog/how-i-built-this-website-with-ai">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SGDG43L70D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SGDG43L70D');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --teal: #00D4AA; --teal-deep: #00A88A;
+      --pink: #FF3D78; --navy: #0F0F23;
+      --cream: #F5F5F7; --cream-dark: #EDEDF0;
+      --white: #FFFFFF; --gray-300: #D1D1DB;
+      --gray-500: #8888A0; --gray-700: #4A4A60; --black: #0A0A1A;
+      --font-display: 'Unbounded', sans-serif;
+      --font-body: 'Outfit', sans-serif;
+      --transition-fast: 150ms ease;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); font-weight: 400; line-height: 1.6; color: var(--navy); background: var(--cream); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    a { color: var(--pink); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 18px 0; border-bottom: 3px solid var(--navy); background: var(--cream); }
+    .nav .container { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: var(--font-display); font-size: 1.35rem; font-weight: 800; color: var(--navy); text-decoration: none; }
+    .nav-logo span { color: var(--pink); }
+    .nav-back { font-weight: 700; font-size: 0.88rem; color: var(--navy); letter-spacing: 0.06em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .nav-back:hover { color: var(--pink); text-decoration: none; }
+
+    .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+    @media (min-width: 768px) { .container { padding: 0 40px; } }
+    @media (min-width: 1024px) { .container { padding: 0 60px; } }
+
+    .post-header { padding: 140px 0 48px; border-bottom: 4px solid var(--navy); }
+    .post-tag { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 10px; color: rgba(255,255,255,0.85); background: var(--navy); margin-bottom: 20px; }
+    .post-header h1 { font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 2.6rem); font-weight: 900; text-transform: uppercase; line-height: 1.12; margin-bottom: 20px; }
+    .post-meta { font-size: 0.88rem; color: var(--gray-500); display: flex; gap: 16px; flex-wrap: wrap; }
+    .post-meta strong { color: var(--navy); }
+
+    .post-content { max-width: 720px; padding: 56px 0 100px; }
+    .post-content p { font-size: 1.05rem; line-height: 1.8; color: var(--gray-700); margin-bottom: 24px; }
+    .post-content h2 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; text-transform: uppercase; margin: 48px 0 16px; color: var(--navy); }
+    .post-content h3 { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; margin: 32px 0 12px; color: var(--navy); }
+    .post-content ul, .post-content ol { margin: 0 0 24px 24px; }
+    .post-content li { font-size: 1.05rem; line-height: 1.8; color: var(--gray-700); margin-bottom: 8px; }
+    .post-content blockquote { border-left: 6px solid var(--pink); padding: 20px 24px; background: var(--white); margin: 32px 0; font-weight: 600; color: var(--navy); font-size: 1.05rem; border: 3px solid var(--navy); border-left: 6px solid var(--pink); box-shadow: 3px 3px 0 var(--navy); }
+    .post-content strong { color: var(--navy); }
+
+    .post-cta { background: var(--navy); padding: 48px 32px; text-align: center; margin-bottom: 64px; border: 3px solid var(--navy); }
+    .post-cta p { color: rgba(255,255,255,0.7); font-size: 1rem; margin-bottom: 20px; }
+    .post-cta .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-body); font-weight: 800; font-size: 0.9rem; letter-spacing: 0.06em; padding: 14px 32px; text-transform: uppercase; background: var(--pink); color: var(--white); border: 3px solid var(--white); box-shadow: 4px 4px 0 rgba(255,255,255,0.3); text-decoration: none; transition: all 300ms ease; }
+    .post-cta .btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(255,255,255,0.3); text-decoration: none; }
+
+    .footer { background: var(--black); color: rgba(255,255,255,0.5); padding: 40px 0 24px; border-top: 4px solid var(--pink); }
+    .footer-inner { display: flex; flex-direction: column; gap: 12px; font-size: 0.78rem; }
+    @media (min-width: 768px) { .footer-inner { flex-direction: row; justify-content: space-between; } }
+    .footer a { color: var(--teal); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container">
+      <a href="/" class="nav-logo">MIKA<span>.</span></a>
+      <a href="/blog/" class="nav-back">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        All Posts
+      </a>
+    </div>
+  </nav>
+
+  <article>
+    <header class="post-header">
+      <div class="container">
+        <span class="post-tag">AI + Web Design</span>
+        <h1>How I Built This Entire Website Using Only AI</h1>
+        <div class="post-meta">
+          <span>By <strong>Mika De Castro</strong></span>
+          <span>March 6, 2026</span>
+          <span>5 min read</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="post-content">
+        <p>Let me be upfront: I am not a developer. I don't write code for a living. I'm a creative strategist who uses AI tools to build things that would normally require a team of specialists.</p>
+
+        <p>This website — the one you're reading right now — was built entirely using <strong>Claude Code</strong>, Anthropic's AI coding assistant. No WordPress. No Squarespace. No Webflow templates. No developer on retainer. Just me, a clear vision of what I wanted, and the ability to communicate that vision to an AI.</p>
+
+        <h2>Why Not Just Use a Template?</h2>
+
+        <p>I've used templates before. Every freelancer has. But templates come with baggage — bloated code, design limitations, and the nagging feeling that your portfolio looks exactly like 10,000 other portfolios.</p>
+
+        <p>I wanted something that matched my brand identity exactly: brutalist, bold, and unapologetically maximalist. No template was going to give me that. And hiring a developer for a custom build? That's a $3,000-$5,000+ investment at minimum.</p>
+
+        <p>So I tried something different.</p>
+
+        <h2>The Process: Prompt Engineering as Design Direction</h2>
+
+        <p>Building a website with AI isn't about typing "make me a website" and watching magic happen. It's about <strong>prompt engineering</strong> — the skill of communicating exactly what you want in a way that AI can execute.</p>
+
+        <p>Here's what my process actually looked like:</p>
+
+        <ol>
+          <li><strong>I started with a detailed creative brief.</strong> Before writing a single prompt, I defined my brand colors, typography choices, the sections I needed, and the overall aesthetic I was going for (brutalist + maximalist).</li>
+          <li><strong>I built iteratively.</strong> Section by section, I described what I wanted and reviewed the output. "Make the hero section have a bold headline with my photo. Use hard offset shadows and no border radius." Specific. Directed.</li>
+          <li><strong>I art-directed constantly.</strong> AI doesn't have taste — it has capability. My job was to be the creative director: reviewing every output, requesting refinements, pushing the design in directions that felt right for my brand.</li>
+          <li><strong>I tested and fixed.</strong> Mobile responsive? Check. SEO meta tags? Check. Page speed? Check. Every detail was reviewed and refined through conversation with the AI.</li>
+        </ol>
+
+        <h2>What This Proves</h2>
+
+        <p>This website is proof of concept for everything I offer my clients. It demonstrates that:</p>
+
+        <ul>
+          <li><strong>AI is a tool, not a replacement.</strong> Claude Code wrote the HTML and CSS. But I made every creative decision — the colors, the layout, the copy, the strategy behind every section.</li>
+          <li><strong>Prompt engineering is a real skill.</strong> The quality of AI output is directly proportional to the quality of your input. Vague prompts get vague results.</li>
+          <li><strong>You don't need a huge budget to look professional.</strong> This is a custom-coded, fully responsive, SEO-optimized portfolio that performs like a $5,000 build.</li>
+        </ul>
+
+        <blockquote>The best use of AI isn't to remove the human from the process. It's to amplify what the human can do.</blockquote>
+
+        <h2>The Bottom Line</h2>
+
+        <p>If you're a brand, creator, or educator looking at AI and thinking "I don't know where to start" — that's exactly the gap I fill. I don't just use AI tools. I understand them deeply enough to build real things with them, and I can teach you to do the same.</p>
+
+        <p>This website is my resume. And AI helped me build it.</p>
+      </div>
+
+      <div class="post-cta">
+        <p>Want a website like this? Or want to learn how AI can work for your brand?</p>
+        <a href="/#contact" class="btn">Let's Talk</a>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span>&copy; 2026 Mika De Castro. All rights reserved.</span>
+        <span><a href="/">heymika.me</a> — This entire website was designed and built using Claude Code.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
