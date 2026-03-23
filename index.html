@@ -311,6 +311,68 @@
     .nav-link:hover::after, .nav-link.active::after { width: 100%; }
     .nav-link:hover, .nav-link.active { color: var(--navy); }
 
+    /* Dropdown */
+    .nav-dropdown {
+      position: relative;
+    }
+    .nav-dropdown-trigger {
+      font-weight: 700; font-size: 0.88rem; color: var(--navy);
+      letter-spacing: 0.06em; text-transform: uppercase;
+      cursor: pointer; display: flex; align-items: center; gap: 4px;
+      background: none; border: none; font-family: var(--font-body);
+      padding: 0; position: relative;
+    }
+    .nav-dropdown-trigger::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 3px;
+      background: var(--teal); border-radius: 0; transition: width var(--transition-base);
+    }
+    .nav-dropdown:hover .nav-dropdown-trigger::after { width: 100%; }
+    .nav-dropdown-trigger svg {
+      width: 12px; height: 12px; transition: transform var(--transition-fast);
+    }
+    .nav-dropdown:hover .nav-dropdown-trigger svg { transform: rotate(180deg); }
+    .nav-dropdown-menu {
+      position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%);
+      background: var(--white); border: 3px solid var(--navy);
+      box-shadow: 4px 4px 0 var(--navy);
+      min-width: 200px; padding: 8px 0;
+      opacity: 0; visibility: hidden; transition: opacity var(--transition-fast), visibility var(--transition-fast);
+      z-index: 1002;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; }
+    .nav-dropdown-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 16px; font-size: 0.82rem; font-weight: 600;
+      color: var(--navy); transition: background var(--transition-fast);
+      text-decoration: none; white-space: nowrap;
+    }
+    .nav-dropdown-item:hover { background: var(--gray-100); }
+    .nav-dropdown-item .dropdown-dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    }
+    .nav-dropdown-item .dropdown-label { font-size: 0.7rem; color: var(--gray-500); margin-left: auto; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* Mobile dropdown */
+    .mobile-dropdown-label {
+      font-family: var(--font-display); font-size: 1.4rem; font-weight: 700;
+      color: var(--teal); cursor: pointer; display: flex; align-items: center; gap: 6px;
+      background: none; border: none; padding: 0;
+    }
+    .mobile-dropdown-label svg {
+      width: 16px; height: 16px; transition: transform var(--transition-fast);
+    }
+    .mobile-dropdown-label.open svg { transform: rotate(180deg); }
+    .mobile-dropdown-items {
+      display: none; flex-direction: column; gap: 12px; margin-top: 12px;
+    }
+    .mobile-dropdown-items.open { display: flex; }
+    .mobile-dropdown-items a {
+      font-family: var(--font-body); font-size: 1rem; font-weight: 600;
+      color: var(--navy); padding-left: 16px; border-left: 3px solid var(--teal);
+      transition: color var(--transition-fast);
+    }
+    .mobile-dropdown-items a:hover { color: var(--teal); }
+
     .nav-cta { display: none; }
 
     .hamburger {
@@ -1475,8 +1537,24 @@
         <a href="#portfolio" class="nav-link">Work</a>
         <a href="#about" class="nav-link">About</a>
         <a href="/blog/" class="nav-link">Blog</a>
-        <a href="https://foreverdecluttering.heymika.me" target="_blank" rel="noopener noreferrer" class="nav-link" style="color:#FF3D78;">Declutter</a>
-        <a href="https://discovery-call-x-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="nav-link" style="color:#00D4AA;">DCX</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" style="color:#00D4AA;">
+            AI Apps
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 4l4 4 4-4"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="https://foreverdecluttering.heymika.me" target="_blank" rel="noopener noreferrer" class="nav-dropdown-item">
+              <span class="dropdown-dot" style="background:#FF3D78;"></span>
+              Forever Decluttering
+              <span class="dropdown-label">Live</span>
+            </a>
+            <a href="https://discovery-call-x-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="nav-dropdown-item">
+              <span class="dropdown-dot" style="background:#00D4AA;"></span>
+              DiscoveryCall X
+              <span class="dropdown-label">Live</span>
+            </a>
+          </div>
+        </div>
       </div>
       <a href="#contact" class="btn btn-primary nav-cta" style="padding:10px 24px;font-size:0.82rem;">Let's Talk</a>
       <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
@@ -1491,8 +1569,16 @@
     <a href="#portfolio" class="mobile-link">Work</a>
     <a href="#about" class="mobile-link">About</a>
     <a href="/blog/" class="mobile-link">Blog</a>
-    <a href="https://foreverdecluttering.heymika.me" target="_blank" rel="noopener noreferrer" class="mobile-link" style="color:#FF3D78;">Declutter</a>
-    <a href="https://discovery-call-x-demo.vercel.app" target="_blank" rel="noopener noreferrer" class="mobile-link" style="color:#00D4AA;">DCX</a>
+    <div style="display:flex;flex-direction:column;align-items:center;">
+      <button class="mobile-dropdown-label" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+        AI Apps
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 4l4 4 4-4"/></svg>
+      </button>
+      <div class="mobile-dropdown-items">
+        <a href="https://foreverdecluttering.heymika.me" target="_blank" rel="noopener noreferrer">Forever Decluttering</a>
+        <a href="https://discovery-call-x-demo.vercel.app" target="_blank" rel="noopener noreferrer">DiscoveryCall X</a>
+      </div>
+    </div>
     <a href="#contact" class="btn btn-primary" style="margin-top:16px;">Let's Talk</a>
   </div>
 
